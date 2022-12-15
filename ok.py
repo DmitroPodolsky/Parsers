@@ -38,7 +38,7 @@ for god in urls:
     adress_ = janh.find("span").find_next("span").text
     photo_ = han.find("a", class_="bh-photo-grid-item bh-photo-grid-photo1 active-image").find("img")["src"]
     args.append((name_,adress_,description_,photo_))
-conn = sqlite3.connect("db.sqlite3")
+conn = sqlite3.connect("ban.db")
 cursor = conn.cursor()
 cursor.executemany("INSERT INTO hello_hotels VALUES (?,?,?,?)", args)
 conn.commit()
